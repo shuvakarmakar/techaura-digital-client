@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom"; // Import React Router Link
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -38,22 +39,20 @@ const Navbar = () => {
               to="services"
               smooth={true}
               duration={500}
-              offset={-80} // adjust for navbar height
+              offset={-80}
               className="cursor-pointer hover:text-indigo-600 transition"
             >
               Services
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink
-              to="about-us"
-              smooth={true}
-              duration={500}
-              offset={-80}
+            {/* Use React Router for About Us page */}
+            <Link
+              to="/about-us"
               className="cursor-pointer hover:text-indigo-600 transition"
             >
               About Us
-            </ScrollLink>
+            </Link>
           </li>
           <li>
             <ScrollLink
@@ -105,7 +104,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <ul className="flex flex-col p-4 space-y-4 text-gray-800 font-medium">
-            {["home", "services", "about-us", "portfolio", "contact"].map((id) => (
+            {["home", "services", "portfolio", "contact"].map((id) => (
               <li key={id}>
                 <ScrollLink
                   to={id}
@@ -115,10 +114,20 @@ const Navbar = () => {
                   className="cursor-pointer hover:text-indigo-600"
                   onClick={closeMenu}
                 >
-                  {id.charAt(0).toUpperCase() + id.slice(1).replace("-", " ")}
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
                 </ScrollLink>
               </li>
             ))}
+            {/* Mobile About Us */}
+            <li>
+              <Link
+                to="/about-us"
+                className="cursor-pointer hover:text-indigo-600"
+                onClick={closeMenu}
+              >
+                About Us
+              </Link>
+            </li>
             <li>
               <ScrollLink
                 to="contact"

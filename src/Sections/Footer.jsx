@@ -30,10 +30,10 @@ const Footer = () => {
                         <FaEnvelope className="text-blue-400" /> contact@techauradigital.com
                     </p>
                     <p className="text-gray-300 flex items-center gap-2">
-                        <FaPhoneAlt className="text-green-400" /> +8801792-778488
+                        <FaPhoneAlt className="text-green-400" /> +8801611-410129
                     </p>
                     <p className="text-gray-300 flex items-center gap-2">
-                        <FaMapMarkerAlt className="text-red-400" /> 123/A, Gulshan Avenue, Dhaka, Bangladesh
+                        <FaMapMarkerAlt className="text-red-400" /> 3rd Floor, Road-1, Sector-9, Uttara, Dhaka 1230
                     </p>
                     <div className="flex space-x-4 mt-4">
                         <a href="https://www.facebook.com/TechAuraDigitalBD/" className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition text-white">
