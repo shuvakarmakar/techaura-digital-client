@@ -1,4 +1,4 @@
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -19,15 +19,22 @@ const Footer = () => {
                         <li><a href="#hero" className="hover:text-blue-500 transition">Home</a></li>
                         <li><a href="#services" className="hover:text-blue-500 transition">Services</a></li>
                         <li><a href="#contact" className="hover:text-blue-500 transition">Contact</a></li>
-                        <li><a href="#about" className="hover:text-blue-500 transition">About</a></li>
+                        <li><a href="about-us" className="hover:text-blue-500 transition">About</a></li>
                     </ul>
                 </div>
 
                 {/* Contact Info */}
                 <div>
                     <h3 className="text-xl font-bold mb-4">Contact</h3>
-                    <p className="text-gray-300">Email: contact@techauradigital.com</p>
-                    <p className="text-gray-300">Phone: +8801792-778488</p>
+                    <p className="text-gray-300 flex items-center gap-2">
+                        <FaEnvelope className="text-blue-400" /> contact@techauradigital.com
+                    </p>
+                    <p className="text-gray-300 flex items-center gap-2">
+                        <FaPhoneAlt className="text-green-400" /> +8801792-778488
+                    </p>
+                    <p className="text-gray-300 flex items-center gap-2">
+                        <FaMapMarkerAlt className="text-red-400" /> 123/A, Gulshan Avenue, Dhaka, Bangladesh
+                    </p>
                     <div className="flex space-x-4 mt-4">
                         <a href="https://www.facebook.com/TechAuraDigitalBD/" className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition text-white">
                             <FaFacebookF />
