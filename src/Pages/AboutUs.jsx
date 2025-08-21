@@ -23,27 +23,28 @@ const AboutUs = () => {
                 </p>
 
                 {/* Mission & Vision */}
-                <div className="grid md:grid-cols-2 gap-10 mb-12">
-                    <div className="bg-[#1e293b] p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-                        <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-                        <p className="text-gray-300 text-lg">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                    <div className="bg-[#1e293b] p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 flex flex-col justify-center">
+                        <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">Our Mission</h2>
+                        <p className="text-gray-300 text-lg text-justify">
                             To deliver high-quality digital solutions that help businesses grow,
                             enhance online presence, and achieve measurable results in a competitive market.
                         </p>
                     </div>
-                    <div className="bg-[#1e293b] p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-                        <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
-                        <p className="text-gray-300 text-lg">
+                    <div className="bg-[#1e293b] p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 flex flex-col justify-center">
+                        <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">Our Vision</h2>
+                        <p className="text-gray-300 text-lg text-justify">
                             To become a leading digital agency recognized for creativity, innovation,
                             and exceptional client service worldwide.
                         </p>
                     </div>
                 </div>
 
+
                 {/* Team Section */}
                 <div className="mb-12">
                     <h2 className="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
-                    <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4 md:px-0">
                         <div className="bg-[#1e293b] p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 text-center">
                             <img
                                 src={CEO}
