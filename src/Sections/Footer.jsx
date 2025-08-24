@@ -16,12 +16,13 @@ const Footer = () => {
                 <div>
                     <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                     <ul className="text-gray-300 space-y-2">
-                        <li><a href="#hero" className="hover:text-blue-500 transition">Home</a></li>
+                        <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
                         <li><a href="#services" className="hover:text-blue-500 transition">Services</a></li>
                         <li><a href="#contact" className="hover:text-blue-500 transition">Contact</a></li>
-                        <li><a href="about-us" className="hover:text-blue-500 transition">About</a></li>
+                        <li><a href="/about-us" className="hover:text-blue-500 transition">About</a></li>
                     </ul>
                 </div>
+
 
                 {/* Contact Info */}
                 <div>
@@ -30,7 +31,7 @@ const Footer = () => {
                         <FaEnvelope className="text-blue-400" /> contact@techauradigital.com
                     </p>
                     <p className="text-gray-300 flex items-center gap-2">
-                        <FaPhoneAlt className="text-green-400" /> +8801611-410129
+                        <FaPhoneAlt className="text-green-400" /> +8801332-115712
                     </p>
                     <p className="text-gray-300 flex items-center gap-2">
                         <FaMapMarkerAlt className="text-red-400" /> 3rd Floor, Road-1, Sector-9, Uttara, Dhaka 1230

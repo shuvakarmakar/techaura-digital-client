@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom"; // Import React Router Link
+import { Link } from "react-router-dom"; // React Router Link
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -25,14 +25,12 @@ const Navbar = () => {
         {/* Desktop & Tablet Menu */}
         <ul className="hidden md:flex lg:flex space-x-8 font-medium text-gray-700">
           <li>
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
+            <Link
+              to="/"
               className="cursor-pointer hover:text-indigo-600 transition"
             >
               Home
-            </ScrollLink>
+            </Link>
           </li>
           <li>
             <ScrollLink
@@ -46,7 +44,6 @@ const Navbar = () => {
             </ScrollLink>
           </li>
           <li>
-            {/* Use React Router for About Us page */}
             <Link
               to="/about-us"
               className="cursor-pointer hover:text-indigo-600 transition"
@@ -104,21 +101,51 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <ul className="flex flex-col p-4 space-y-4 text-gray-800 font-medium">
-            {["home", "services", "portfolio", "contact"].map((id) => (
-              <li key={id}>
-                <ScrollLink
-                  to={id}
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                  className="cursor-pointer hover:text-indigo-600"
-                  onClick={closeMenu}
-                >
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
-                </ScrollLink>
-              </li>
-            ))}
-            {/* Mobile About Us */}
+            <li>
+              <Link
+                to="/"
+                className="cursor-pointer hover:text-indigo-600"
+                onClick={closeMenu}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <ScrollLink
+                to="services"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-indigo-600"
+                onClick={closeMenu}
+              >
+                Services
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="portfolio"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-indigo-600"
+                onClick={closeMenu}
+              >
+                Portfolio
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-indigo-600"
+                onClick={closeMenu}
+              >
+                Contact
+              </ScrollLink>
+            </li>
             <li>
               <Link
                 to="/about-us"
