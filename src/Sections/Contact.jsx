@@ -9,7 +9,9 @@ const Contact = () => {
         message: "",
     });
 
-    // handle input changes
+    const [isSending, setIsSending] = useState(false); // loading state
+
+    // Handle input changes
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -17,16 +19,17 @@ const Contact = () => {
         });
     };
 
-    // handle form submit
+    // Handle form submit
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSending(true);
 
         emailjs
             .send(
-                import.meta.env.VITE_service, // service ID
-                import.meta.env.VITE_template, // template ID
-                formData, // 👈 directly pass formData (keys match EmailJS template vars)
-                import.meta.env.VITE_public // public key
+                import.meta.env.VITE_EMAILJS_SERVICE_ID, // service ID
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // template ID
+                formData, // data
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY // public key
             )
             .then(
                 () => {
@@ -37,6 +40,7 @@ const Contact = () => {
                         confirmButtonColor: "#3b82f6",
                     });
                     setFormData({ user_name: "", user_email: "", message: "" }); // reset form
+                    setIsSending(false);
                 },
                 (error) => {
                     Swal.fire({
@@ -46,6 +50,7 @@ const Contact = () => {
                         confirmButtonColor: "#ef4444",
                     });
                     console.error("EmailJS Error:", error);
+                    setIsSending(false);
                 }
             );
     };
@@ -95,9 +100,11 @@ const Contact = () => {
                         />
                         <button
                             type="submit"
-                            className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition"
+                            disabled={isSending}
+                            className={`bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition ${isSending ? "opacity-50 cursor-not-allowed" : ""
+                                }`}
                         >
-                            Send Message
+                            {isSending ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 </div>
